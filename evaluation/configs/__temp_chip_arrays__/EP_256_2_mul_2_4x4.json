@@ -1,0 +1,38 @@
+{
+  "seed": 2025,
+  "base_strategy": "EP",
+  "frames": 1000000,
+  "output_dir": "results",
+  "figure_dir": "results/figures",
+  "hardware": {
+    "row_number_of_chip": 4,
+    "column_number_of_chip": 4,
+    "token_buffer_size": 512,
+    "expert_buffer_size": 2,
+    "ddr_buffer_size": 512,
+    "action_durations": {
+      "DDR_LOAD": 960,
+      "DDR_SAVE": 40,
+      "CHIP_MOVE": 160,
+      "COMPUTE": 80,
+      "RELEASE": 2,
+      "ALLOCATE": 1
+    }
+  },
+  "scheduler": {
+    "expert_number": 64,
+    "micro_slice_num_per_expert": 1,
+    "token_number": 256,
+    "min_activated_token": 0,
+    "token_weight_threshould": 0,
+    "expert_distribution_mode": "EVEN",
+    "token_distribution_mode": "EVEN",
+    "ddr_load_mode": "SEQUENTIAL",
+    "destination_select_mode": "NEAREST",
+    "path_mode": "VOTEX",
+    "redispatch_mode": "NO_REDISPATCH",
+    "paired": false
+  },
+  "model": "Qwen3-MoE",
+  "dataset": "c4"
+}
